@@ -1,73 +1,126 @@
-# 🎮 Multiplayer Image Guessing Game
+# Multiplayer Image Guessing Game
 
-A real-time multiplayer game where players describe images to others and compete to guess them correctly.
+## 🎮 Overview
+A real-time multiplayer game where players describe images to others and compete to guess correctly. Each player gets a unique image from a collection of 22 images, describes it to the group, and other players try to identify which image the describer is talking about.
 
-## How to Play
+## 🎯 Game Flow
 
-1. **Join the Game** - Enter your name in the lobby
-2. **Start Game** - Once 2+ players have joined, click "Start Game"
-3. **Each Round**:
-   - One player is the **Describer** - They see an image and must describe it to other players
-   - Other players are **Guessers** - They read the description and try to guess what the image is
-   - **First correct guess wins 10 points!**
-4. **Rotate** - Each round, a new player becomes the describer
-5. **Keep Score** - Track scores on the sidebar
+1. **Lobby Phase**: Players join a game room with a room code
+2. **Image Assignment**: Each player receives a unique random image (private)
+3. **Description Phase**: Players describe their assigned image to others without revealing the answer
+4. **Guessing Phase**: Other players submit their guesses for which player has which image
+5. **Reveal Phase**: Correct answers are revealed
+6. **Scoring**: First player to correctly guess wins a point
+7. **Next Round**: Repeat with new image assignments
 
-## Features
+## 📋 Game Images (22 Total)
 
-- ✅ Real-time multiplayer using Socket.io
-- ✅ 12 historical/political images
-- ✅ Live score tracking
-- ✅ 60-second round timer
-- ✅ Round rotation system
-- ✅ Responsive design for mobile & desktop
-- ✅ Private image distribution (each player gets their own)
-
-## Installation
-
-```bash
-# Install dependencies
-npm install
-
-# Start server
-npm start
-
-# Visit http://localhost:3000
-```
-
-## Tech Stack
-
-- **Backend**: Node.js, Express, Socket.io
-- **Frontend**: HTML5, CSS3, JavaScript
-- **Real-time**: Socket.io WebSockets
-
-## Game Images
-
-The game includes 12 images:
 1. 2008 Financial Crisis
 2. Mike Pence
-3. Air Force One Stairs
-4. Australian Prime Minister
-5. Pink Hair Sequins
-6. Houndstooth Pearl
-7. Turban
-8. Hoodie Portrait
-9. Capitol Building Riot
-10. Bill Clinton at Desk
-11. Hiroshima Bombing
-12. 9/11 Twin Towers
+3. Presidential Stairs Incident
+4. Scott Morrison
+5. Man at Stadium
+6. Senate Attendee
+7. Capitol Building Protest
+8. Presidential Address
+9. Hiroshima Bombing
+10. 9/11 Attack
+11. Political Rally
+12. News Anchor (Male)
+13. News Anchor (Female)
+14. Woman Portrait
+15. Man Mugshot
+16. Religious Icon
+17. Historical Revolutionary
+18. Former Iraqi Leader
+19. Karl Marx
+20. Anne Frank
+21. Jesus Christ
+22. News Broadcast
 
-## Future Enhancements
+## 🚀 How to Run
 
-- [ ] Image upload/customization
-- [ ] Custom round durations
-- [ ] Team mode
-- [ ] Leaderboard persistence
-- [ ] Chat system
-- [ ] Sound effects
-- [ ] Difficulty levels with hint system
-- [ ] Actual image loading from PDF
+### Backend Server
+```bash
+npm install
+npm start
+```
+Server runs on `http://localhost:5000`
 
-## License
+### Frontend (React)
+```bash
+cd client
+npm install
+npm start
+```
+Frontend runs on `http://localhost:3000`
 
-MIT
+## 📖 How to Play
+
+1. **Create or Join**: Start a new game or join with a room code
+2. **Wait for Players**: Minimum 2 players required to start
+3. **View Your Image**: Only you can see your assigned image
+4. **Describe**: Tell others about your image without saying what it is
+5. **Guess**: Listen to descriptions and try to match them to players
+6. **Score**: First correct guess wins a point
+7. **Repeat**: Play multiple rounds to build up your score
+
+## 🏆 Scoring System
+
+- **1 point** for correctly identifying someone else's image
+- Players can play unlimited rounds
+- Scores accumulate throughout the game session
+- Leaderboard updates after each round
+
+## 🔧 Tech Stack
+
+- **Backend**: Node.js + Express + Socket.io
+- **Frontend**: React + TypeScript
+- **Real-time Communication**: WebSockets
+- **Data Format**: JSON
+
+## 💡 Socket.io Events
+
+### Client → Server
+- `createGame`: Start a new game room
+- `joinGame`: Join existing game
+- `startGame`: Begin the game
+- `submitDescription`: Submit your image description
+- `submitGuess`: Submit a guess for someone's image
+- `revealRound`: Request round results
+- `nextRound`: Move to next round
+- `getMyImage`: Retrieve your assigned image ID
+
+### Server → Client
+- `gameCreated`: Game successfully created
+- `gameJoined`: Successfully joined game
+- `gameUpdated`: Game state changed
+- `roundStarted`: New round begins
+- `descriptionSubmitted`: Description received
+- `guessSubmitted`: Guess received
+- `roundRevealed`: Results and scores
+- `myImage`: Your assigned image ID
+- `error`: Error notification
+
+## 🎲 Rules
+
+- Minimum 2 players required
+- Each player gets exactly one image per round
+- You cannot guess your own image
+- Descriptions must not directly reveal the image
+- First player to guess correctly gets the point
+- All images are randomized each round
+- No player gets the same image in consecutive rounds
+
+## 🛠️ Development
+
+```bash
+# Run server with auto-reload
+npm run dev
+
+# Run both server and client
+# Terminal 1:
+npm start
+# Terminal 2:
+npm run client
+```
