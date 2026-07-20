@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Guessing Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Lobby Screen -->
+    <div id="lobby" class="screen active">
+      <div class="container">
+        <h1>🎮 Image Guessing Game</h1>
+        <p class="subtitle">Describe your image. Others guess. First correct guess wins!</p>
+        
+        <div class="input-group">
+          <input 
+            type="text" 
+            id="playerName" 
+            placeholder="Enter your name"
+            maxlength="20"
+          >
+          <button id="joinBtn" class="btn btn-primary">Join Game</button>
+        </div>
+
+        <div id="playersList" class="players-list hidden">
+          <h3>Players Online:</h3>
+          <ul id="playersContainer"></ul>
+          <button id="startBtn" class="btn btn-success hidden">Start Game</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+      <div class="game-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <div class="scores">
+            <h3>Scores</h3>
+            <ul id="scoresList"></ul>
+          </div>
+        </aside>
+
+        <!-- Main Game Area -->
+        <main class="game-main">
+          <div id="roundInfo" class="round-info">
+            <div class="round-number">Round <span id="roundNumber">1</span></div>
+            <div class="timer">
+              <div id="timerDisplay">60s</div>
+            </div>
+          </div>
+
+          <!-- Describer View -->
+          <div id="describerView" class="view hidden">
+            <div class="image-container">
+              <img id="describerImage" src="" alt="Your image to describe">
+              <p class="image-label">Describe this image to others!</p>
+            </div>
+            <div class="description-box">
+              <textarea 
+                id="descriptionInput"
+                placeholder="Describe what you see... (Press Enter or click Send)"
+                rows="4"
+              ></textarea>
+              <button id="sendDescriptionBtn" class="btn btn-primary">Send Description</button>
+            </div>
+          </div>
+
+          <!-- Guesser View -->
+          <div id="guesserView" class="view hidden">
+            <div class="describer-info">
+              <h2 id="describerName">Player</h2>
+              <p>is describing an image for you to guess!</p>
+            </div>
+
+            <div class="description-display" id="descriptionDisplay">
+              <p class="waiting">Waiting for description...</p>
+            </div>
+
+            <div class="guess-box">
+              <input 
+                type="text" 
+                id="guessInput"
+                placeholder="Type your guess..."
+              >
+              <button id="submitGuessBtn" class="btn btn-success">Submit Guess</button>
+            </div>
+
+            <div id="feedbackArea" class="feedback"></div>
+          </div>
+
+          <!-- Round End Screen -->
+          <div id="roundEnd" class="view hidden">
+            <div class="round-end-content">
+              <h2>Round Complete!</h2>
+              <div id="roundEndInfo"></div>
+              <p class="next-round">Next round starting...</p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
