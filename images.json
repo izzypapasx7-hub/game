@@ -1,0 +1,26 @@
+{
+  "images": [
+    {"id": 1, "title": "2008 Financial Crisis", "hint": "Wall Street market collapse"},
+    {"id": 2, "title": "Mike Pence", "hint": "Former US Vice President"},
+    {"id": 3, "title": "Presidential Stairs Incident", "hint": "Fall down steps with seal"},
+    {"id": 4, "title": "Scott Morrison", "hint": "Australian Prime Minister with purple filter"},
+    {"id": 5, "title": "Man at Stadium", "hint": "Elderly man with drink"},
+    {"id": 6, "title": "Senate Attendee", "hint": "Person in parliament setting"},
+    {"id": 7, "title": "Capitol Building Protest", "hint": "Congress building with crowd and flags"},
+    {"id": 8, "title": "Presidential Address", "hint": "Man speaking at podium"},
+    {"id": 9, "title": "Hiroshima Bombing", "hint": "Mushroom cloud from atomic bomb"},
+    {"id": 10, "title": "9/11 Attack", "hint": "Twin towers with plane impact"},
+    {"id": 11, "title": "Political Rally", "hint": "Speaker at podium with crowd"},
+    {"id": 12, "title": "News Anchor at Desk", "hint": "Man in beige sweater broadcasting"},
+    {"id": 13, "title": "Female News Anchor", "hint": "Woman with blonde hair on news set"},
+    {"id": 14, "title": "Woman Portrait", "hint": "Woman in blue sleeveless shirt"},
+    {"id": 15, "title": "Man Mugshot", "hint": "Older man in formal photo"},
+    {"id": 16, "title": "Religious Icon", "hint": "Saint with golden halo"},
+    {"id": 17, "title": "Historical Revolutionary", "hint": "Bearded man with raised hand"},
+    {"id": 18, "title": "Former Iraqi Leader", "hint": "Man with distinctive mustache"},
+    {"id": 19, "title": "Karl Marx", "hint": "Historical philosopher with long beard"},
+    {"id": 20, "title": "Anne Frank", "hint": "Young woman historical portrait"},
+    {"id": 21, "title": "Jesus Christ", "hint": "Religious figure with sacred heart"},
+    {"id": 22, "title": "News Broadcast", "hint": "Formal news setup with Capitol background"}
+  ]
+}
